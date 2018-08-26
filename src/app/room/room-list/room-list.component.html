@@ -1,0 +1,8 @@
+<div class="right">
+  <h3>Rooms</h3>
+  <ul>
+    <li *ngFor="let room of rooms | async" >
+      {{room.name}}
+    </li>
+  </ul>
+</div>
