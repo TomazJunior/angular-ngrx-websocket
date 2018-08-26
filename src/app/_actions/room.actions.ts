@@ -20,7 +20,7 @@ export class AddRooms implements Action {
 export class RemoveRoom implements Action {
   readonly type = REMOVE_ROOM;
 
-  constructor(public payload: number) {}
+  constructor(public payload: string) {}
 }
 
 export type Actions = AddRoom | RemoveRoom | AddRooms;

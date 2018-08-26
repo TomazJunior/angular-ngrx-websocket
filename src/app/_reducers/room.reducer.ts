@@ -9,8 +9,7 @@ export function reducer(state: Array<Room>, action: RoomActions.Actions) {
     case RoomActions.ADD_ROOM:
       return [...state, action.payload];
     case RoomActions.REMOVE_ROOM:
-      state.splice(action.payload, 1);
-      return [...state];
+      return state.filter((room) => room._id !== action.payload);
     default:
       return state;
   }
