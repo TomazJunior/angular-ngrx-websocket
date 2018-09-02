@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-ngrx-websocket';
   constructor() { }
+  logout() {
+    console.log('user logged out');
+  }
 }
