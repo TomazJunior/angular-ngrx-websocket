@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './_reducers/room.reducer';
+import { roomReducer } from './_reducers/room.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { routes } from './app.routes';
 import { MaterialModule } from './app.material.module';
 import { CommonModule } from '@angular/common';
+import { authReducer } from './auth/auth.reducer';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot({
-      room: reducer
+      room: roomReducer,
+      auth: authReducer
     }),
     StoreDevtoolsModule.instrument(),
     MaterialModule

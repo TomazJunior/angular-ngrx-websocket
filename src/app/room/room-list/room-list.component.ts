@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, noop } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Room } from '../room.model';
 import { AppState } from '../../app.state';
@@ -22,8 +22,9 @@ export class RoomListComponent implements OnInit {
 
   ngOnInit() {
     this.subscription = this.rooms
-    .subscribe(rooms => {
-    }, error => {
+    .subscribe(
+      noop,
+      error => {
         // Do something with error
         console.log('error', error);
     });

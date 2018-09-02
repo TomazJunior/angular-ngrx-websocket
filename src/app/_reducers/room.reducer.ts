@@ -2,7 +2,7 @@ import { Room } from './../room/room.model';
 import * as RoomActions from './../_actions/room.actions';
 
 
-export function reducer(state: Array<Room>, action: RoomActions.Actions) {
+export function roomReducer(state: Array<Room>, action: RoomActions.Actions) {
   switch (action.type) {
     case RoomActions.ADD_ROOMS:
       return action.payload;
